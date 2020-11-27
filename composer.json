@@ -1,0 +1,11 @@
+{
+    "name": "admin/cart",
+    "description": "Shopping cart system",
+    "authors": [
+        {
+            "name": "titus njiru",
+            "email": "njirutitus@gmail.com"
+        }
+    ],
+    "require": {}
+}

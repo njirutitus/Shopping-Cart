@@ -1,0 +1,7 @@
+### PHPCodeSniffer ###
+# CodeSniffer
+
+/vendor/*
+/wpcs/*
+
+# End of https://www.toptal.com/developers/gitignore/api/phpcodesniffer

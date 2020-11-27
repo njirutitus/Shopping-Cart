@@ -40,7 +40,7 @@
         
         </p>
         <div class="row mt-4">
-            <div class="col-6 m-auto">
+            <div class="col-12 col-md-6 m-auto">
                 <div class="card">
                     <div class="card-body">
                         
@@ -110,22 +110,24 @@
             <h1 class="text-center col-12">My Products</h1>
             <a id="add_product" class="btn btn-primary m-1" href="dashboard.php?action=add"><i class="far fa-plus"></i> Add New</a>
             <div class="col-12 m-auto">
-                <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th scope="col">code</th>
-                        <th scope="col">Product Name</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    
-                    <!-- Code to Diplay the products -->
-                    <?php require_once './Controllers/products.php'; ?>
-                    </tbody>
-                  </table>
+              <div class="table-responsive">
+                  <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">code</th>
+                          <th scope="col">Product Name</th>
+                          <th scope="col">Description</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      
+                      <!-- Code to Diplay the products -->
+                      <?php require_once './Controllers/products.php'; ?>
+                      </tbody>
+                    </table>
+              </div>
             </div>
         </div>
     </div>

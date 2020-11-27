@@ -1,4 +1,18 @@
 <?php 
+    require_once '../conn.php';
+
+    //  If user is not Logged in redirect to login page
+    if((isset($_SESSION['user'])) && $user['is_staff'] == 0  ){ 
+      header("location: ../index.php");
+  
+    }
+    else {
+      //  If user is not staff redirect to index page
+      if (!isset($_SESSION['user'])){
+        header("location: ../login.php");
+      }
+    }
+
     $id = $user["id"];
     try {
 
@@ -10,10 +24,10 @@
             ?>
 
 <tr>
-    <th scope='row'> <?php echo $row['code']; ?> </th>
-    <td><?php echo $row['name']; ?></td>
-    <td><?php echo $row['description']; ?></td>
-    <td>KES <?php echo number_format($row['unit_price']); ?></td>
+    <th scope='row'> <?php echo htmlentities($row['code']); ?> </th>
+    <td><?php echo htmlentities($row['name']); ?></td>
+    <td><?php echo htmlentities($row['description']); ?></td>
+    <td>KES <?php echo htmlentities(number_format($row['unit_price'])); ?></td>
     <td><a class="btn btn-primary m-1" href="dashboard.php?action=Edit&code=<?php echo $row['code']; ?>"><i class="far fa-edit"></i> Edit</a><a class="btn btn-danger m-1" href="dashboard.php?action=Delete&code=<?php echo $row['code']; ?>"><i class="far fa-trash-alt"></i> Delete</a></td>
 </tr>
 
