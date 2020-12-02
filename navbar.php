@@ -19,6 +19,17 @@
           <li class="nav-item">
             <a class="nav-link" href="logout.php">Log Out</a>
           </li>
+          <?php if($is_staff == 0) {?>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.php"> Cart <span class="badge badge-dark">
+              <?php
+                if(isset($_SESSION['cart']))
+                  echo count($_SESSION['cart']);
+              ?>
+            </span></a>
+          </li>
+          <?php } ?>
+
         </ul>
       </div>
     </nav>
@@ -41,6 +52,18 @@
 
           <li class="nav-item">
             <a class="nav-link" href="login.php">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.php"> Cart 
+
+            <span class="badge badge-light">
+              <?php
+                if(isset($_SESSION['cart']))
+                  echo count($_SESSION['cart']);
+              ?>
+            </span>
+
+            </a>
           </li>
         </ul>
       </div>

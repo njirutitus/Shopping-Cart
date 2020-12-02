@@ -17,8 +17,7 @@
     />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="bootstrap.min.css"/>
 
     <script src="font-awesome.js" crossorigin="anonymous"></script>
 
@@ -28,58 +27,15 @@
     <?php require_once "./navbar.php"; ?>
 
     <div class="container">
-        <p class="text-success">
-        
-        </p>
+        <br/>
+        <div id="alert">
+            <?php require_once "./feedback.php"; ?>
+        </div>
         <h2>Reccommended for you</h2>
         <hr />
         <div class="row">
-
-            <div class="col-12 col-md-3 mb-2">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <img class="img-fluid" src="./images/item-2.jpeg" alt="">
-                        <p><a href="">Flash Drive</a></p>
-                        <p>Kes. 1200</p>
-                        <p><a href="">Add to Cart</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-3 mb-2">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <img class="img-fluid" src="./images/item-4.jpeg" alt="">
-                        <p><a href="">Flash Drive</a></p>
-                        <p>Kes. 1200</p>
-                        <p><a href="">Add to Cart</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-3 mb-2">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <img class="img-fluid" src="./images/item-6.jpeg" alt="">
-                        <p><a href="">Flash Drive</a></p>
-                        <p>Kes. 1200</p>
-                        <p><a href="">Add to Cart</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-3 mb-2">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <img class="img-fluid" src="./images/item-7.jpeg" alt="">
-                        <p><a href="">Flash Drive</a></p>
-                        <p>Kes. 1200</p>
-                        <p><a href="">Add to Cart</p>
-                    </div>
-                </div>
-            </div>
+            <?php require_once "./Controllers/allproducts.php";?>
         </div>
-        
         <hr />
     </div>
     <?php require_once "./footer.php"; ?>

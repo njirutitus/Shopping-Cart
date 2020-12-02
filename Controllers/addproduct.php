@@ -19,7 +19,7 @@
         $description = $_POST['description'];
         $added_by = $_SESSION['user']['id'];
 
-        //if the action value is not set then add new product to the database
+        //if the action value is not set or action is add then add a new product to the database
         if(!isset($_GET['action']) || $_GET['action'] == 'Add'){
 
             try{

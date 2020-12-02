@@ -1,5 +1,5 @@
 <?php 
-    require_once '../conn.php';
+    require_once 'conn.php';
 
     //  If user is not Logged in redirect to login page
     if((isset($_SESSION['user'])) && $user['is_staff'] == 0  ){ 
@@ -21,10 +21,16 @@
         $STH->setFetchMode(PDO::FETCH_ASSOC);
         # showing theresults
         while($row = $STH->fetch()){
+          $avatar = $row['avatar'];
+          if($avatar == "") {
+            $n = rand(0,10);
+            $avatar = "blank_product".$n.".jpg";
+          }
             ?>
 
 <tr>
     <th scope='row'> <?php echo htmlentities($row['code']); ?> </th>
+    <td><img src="./images/<?php echo $avatar; ?>" width="30" height="30"></td>
     <td><?php echo htmlentities($row['name']); ?></td>
     <td><?php echo htmlentities($row['description']); ?></td>
     <td>KES <?php echo htmlentities(number_format($row['unit_price'])); ?></td>

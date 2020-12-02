@@ -6,6 +6,7 @@
     header("location:index.php");
 
   }
+
   else {
     //  If user is not staff redirect to index page
     if (!isset($_SESSION['user'])){
@@ -25,8 +26,7 @@
     />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="bootstrap.min.css"/>
 
     <script src="font-awesome.js" crossorigin="anonymous"></script>
 
@@ -82,7 +82,7 @@
                           }                        
                         ?>
                         <h2 class="text-center text-primary"><?php echo htmlentities($action); ?> Product</h2>
-                        <form method="post">
+                        <form method="post" enctype="multipart/form-data">
                             <div class="form-group">
                               <label for="product_name">Product Name</label>
                               <input type="text" class="form-control" id="product_name" name="product_name" value="<?php echo htmlentities($name); ?>" required>
@@ -97,7 +97,17 @@
                             <div class="form-group">
                                 <label for="description">Description</label>
                                 <textarea class="form-control" name="description" id="description" required><?php echo htmlentities($description); ?></textarea>
+                            </div>
+
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Avatar</span>
                               </div>
+                              <div class="custom-file">
+                                <input name="avatar" type="file" class="custom-file-input" id="avatar" aria-describedby="avatar">
+                                <label class="custom-file-label" for="avatar">Choose file</label>
+                              </div>
+                            </div>
                             
                             <input name="submit" type="submit" class="btn btn-primary" value="<?php echo htmlentities($action); ?>"/>
                         </form>
@@ -115,6 +125,7 @@
                       <thead>
                         <tr>
                           <th scope="col">code</th>
+                          <th scope="col">Avatar</th>
                           <th scope="col">Product Name</th>
                           <th scope="col">Description</th>
                           <th scope="col">Price</th>
@@ -124,7 +135,7 @@
                       <tbody>
                       
                       <!-- Code to Diplay the products -->
-                      <?php require_once './Controllers/products.php'; ?>
+                      <?php require_once './Controllers/myproducts.php'; ?>
                       </tbody>
                     </table>
               </div>
